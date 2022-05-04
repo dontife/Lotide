@@ -8,13 +8,13 @@ const assertEqual = function(actual, expected) {
 
 
 const eqArrays = function (someArray, anotherArray) {
- for (let i =0; i < someArray.length; i++){
-   if (someArray[i] !== anotherArray[i]){
-     return false;
-   }
- } 
-return true;
-}
+  for (let i =0; i < someArray.length; i++){
+    if ((someArray[i] !== anotherArray[i]) || (someArray.length !== anotherArray.length)){
+      return false;
+    }
+  } 
+ return true;
+ };
 console.log(eqArrays([1, 2, 3], [1, 2, 3]));
 console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false
 
